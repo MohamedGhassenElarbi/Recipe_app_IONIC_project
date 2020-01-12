@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-title>Chercher ma recette</ion-title>
+  <ion-menu-button slot="start"></ion-menu-button>
+  </ion-toolbar>
+ </ion-header>
+
+ <ion-content>
+  <ion-searchbar
+    showcancelbutton=""
+    (ionChange)="filterList($event)"
+  ></ion-searchbar>
+  <ion-list>
+    <ion-item button [routerLink]="['/idea',id]" *ngFor="let idea of recetteList">
+        <ion-avatar slot="start"><ion-img [src]="idea.imageUrl"></ion-img></ion-avatar>
+      <ion-label>{{ idea.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
